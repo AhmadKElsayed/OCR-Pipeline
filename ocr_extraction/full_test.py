@@ -8,8 +8,8 @@ from thefuzz import fuzz
 
 # Imports
 from docling.document_converter import DocumentConverter, PdfFormatOption
-from docling.datamodel.pipeline_options import PdfPipelineOptions, RapidOcrOptions
 from docling.datamodel.base_models import InputFormat
+from docling.datamodel.pipeline_options import PdfPipelineOptions, RapidOcrOptions, TableStructureOptions
 from surya.foundation import FoundationPredictor
 from surya.recognition import RecognitionPredictor
 from surya.detection import DetectionPredictor
@@ -21,7 +21,7 @@ from qwen_vl_utils import process_vision_info
 
 # Hardware Setup
 device = "cuda" if torch.cuda.is_available() else "cpu"
-image_path = "001.jpg"
+image_path = "DASA-Statement-1.png"
 image = Image.open(image_path).convert("RGB")
 output_file = "battleground_comparison.md"
 
@@ -57,14 +57,21 @@ marker_text, _, _ = text_from_rendered(marker_rendered)
 del rec_predictor, det_predictor, foundation_predictor, marker_converter, model_dict
 clear_vram()
 
+
 # ---------------------------------------------------------
-# 2. DOCLING (Run and delete)
+# 2. DOCLING (Refined with RapidOCR + Table Enforcing)
 # ---------------------------------------------------------
-print("\n--- Phase 2: Docling (RapidOCR) ---")
-ocr_options = RapidOcrOptions()
+print("\n--- Phase 2: Docling (RapidOCR + Table Structure) ---")
+
+# 🚨 The force flag is now safely inside RapidOcrOptions
+ocr_options = RapidOcrOptions(force_full_page_ocr=True)
+
 pipeline_options = PdfPipelineOptions()
 pipeline_options.do_ocr = True
+pipeline_options.do_table_structure = True
+pipeline_options.table_structure_options = TableStructureOptions(do_cell_matching=True)
 pipeline_options.ocr_options = ocr_options
+
 docling_converter = DocumentConverter(
     format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)}
 )
