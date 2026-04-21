@@ -1,0 +1,41 @@
+# Environments
+.env
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# IDEs / OS
+.vscode/
+.idea/
+.DS_Store
+
+# PyTorch / Hugging Face Caching
+.cache/
+huggingface/
+*.safetensors
+*.bin
+*.pt
+
+# Project Specific Data & Outputs
+# Ignore the raw PDFs, images, and labels
+extracted_data/
+*.jpg
+*.jpeg
+*.png
+*.pdf
+
+# Ignore the generated output folders and markdown comparisons
+vlm_results/
+surya_results/
+marker_results/
+docling_rapid_results/
+vlm_qn_results/
+battleground_comparison.md
+comparison_results.md
+
+# Remote Editor Servers
+.vscode-server/
+.cursor-server/
+.windsurf-server/
