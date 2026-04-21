@@ -40,3 +40,7 @@ battleground_report.md
 .vscode-server/
 .cursor-server/
 .windsurf-server/
+# Terminal History
+.bash_history
+.zsh_history
+.python_history
