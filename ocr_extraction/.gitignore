@@ -34,6 +34,7 @@ docling_rapid_results/
 vlm_qn_results/
 battleground_comparison.md
 comparison_results.md
+battleground_report.md
 
 # Remote Editor Servers
 .vscode-server/

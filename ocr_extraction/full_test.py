@@ -23,7 +23,7 @@ from qwen_vl_utils import process_vision_info
 device = "cuda" if torch.cuda.is_available() else "cpu"
 image_path = "DASA-Statement-1.png"
 image = Image.open(image_path).convert("RGB")
-output_file = "battleground_comparison.md"
+output_file = "full_test_comparison.md"
 
 def clear_vram():
     torch.cuda.empty_cache()
