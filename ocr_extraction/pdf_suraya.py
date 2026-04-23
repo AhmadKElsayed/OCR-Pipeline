@@ -56,8 +56,8 @@ def validate_ocr(ocr_text, ground_truth_dict, fuzzy_threshold=90):
 base_dir = Path("extracted_data")
 pdfs_dir = base_dir / "pdfs"
 labels_dir = base_dir / "labels"
-results_dir = Path("surya_results")
-results_dir.mkdir(exist_ok=True)
+results_dir = Path("test_results/surya_results")
+results_dir.mkdir(parents=True, exist_ok=True)
 
 # 3. Process the PDFs
 for pdf_path in pdfs_dir.glob("*.pdf"):

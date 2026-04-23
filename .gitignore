@@ -27,6 +27,7 @@ extracted_data/
 *.pdf
 
 # Ignore the generated output folders and markdown comparisons
+test_results/
 vlm_results/
 surya_results/
 marker_results/

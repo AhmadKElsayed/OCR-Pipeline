@@ -78,8 +78,8 @@ def validate_conversion(extracted_text, ground_truth_dict, fuzzy_threshold=85):
 base_dir = Path("extracted_data")
 pdfs_dir = base_dir / "pdfs"
 labels_dir = base_dir / "labels"
-results_dir = Path("docling_rapid_results")
-results_dir.mkdir(exist_ok=True)
+results_dir = Path("test_results/docling_rapid_results")
+results_dir.mkdir(parents=True, exist_ok=True)
 
 # Process the PDFs
 for pdf_path in pdfs_dir.glob("*.pdf"):
