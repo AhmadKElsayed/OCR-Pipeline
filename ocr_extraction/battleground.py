@@ -94,7 +94,7 @@ def run_battleground(test_dir: str, output_dir: str = "battleground_results"):
     active_files = [f for f in files if str(f) in batch_data]
 
     # ---------------------------------------------------------
-    # PHASE 1: SURYA & MARKER (Runs ONCE for all files)
+    # PHASE 1: SURYA & MARKER
     # ---------------------------------------------------------
     print("\n" + "="*60 + "\n--- Phase 1: Surya & Marker ---\n" + "="*60)
     try:
@@ -134,7 +134,7 @@ def run_battleground(test_dir: str, output_dir: str = "battleground_results"):
     clear_vram()
 
     # ---------------------------------------------------------
-    # PHASE 2: DOCLING (Runs ONCE for all files)
+    # PHASE 2: DOCLING
     # ---------------------------------------------------------
     print("\n" + "="*60 + "\n--- Phase 2: Docling ---\n" + "="*60)
     try:
@@ -162,7 +162,7 @@ def run_battleground(test_dir: str, output_dir: str = "battleground_results"):
     clear_vram()
 
     # ---------------------------------------------------------
-    # PHASE 3: QWEN 2.5-VL (Runs ONCE for all files)
+    # PHASE 3: QWEN 2.5-VL
     # ---------------------------------------------------------
     print("\n" + "="*60 + "\n--- Phase 3: Qwen2.5-VL ---\n" + "="*60)
     try:
