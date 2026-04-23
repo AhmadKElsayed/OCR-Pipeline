@@ -21,12 +21,14 @@ huggingface/
 # Project Specific Data & Outputs
 # Ignore the raw PDFs, images, and labels
 extracted_data/
+test_data/
 *.jpg
 *.jpeg
 *.png
 *.pdf
 
 # Ignore the generated output folders and markdown comparisons
+battleground_results/
 test_results/
 vlm_results/
 surya_results/
