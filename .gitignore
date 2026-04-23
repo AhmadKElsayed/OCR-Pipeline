@@ -40,10 +40,10 @@ battleground_comparison.md
 comparison_results.md
 battleground_report.md
 
-# Remote Editor Servers
-.vscode-server/
-.cursor-server/
-.windsurf-server/
+# Remote Editor Servers (NO trailing slashes for symlinks!)
+.vscode-server
+.cursor-server
+.windsurf-server
 
 # Terminal History
 .bash_history
